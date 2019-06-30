@@ -2,5 +2,5 @@
 
 
 #file.write("")
-    x=int(input("花销的方面x？"))
+    # x=int(input("花销的方面x？"))
 
