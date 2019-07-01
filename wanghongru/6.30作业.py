@@ -1,30 +1,56 @@
-import random
-a = random.randint( 1,10 )
-
-c = 1
-while( True ):
-
-    if c > 2:
-        print("亲，失败了哦，要不要再试一次。")
-        break
-    b = int(input("亲，猜猜这个数是几？ 你有两次机会哦"))
-    if b == a:
-        print("亲， 猜对了呢，真的好厉害哦！！！")
-        break
-    elif b > a:
-        print("亲， 大了呢，再试一试哦")
-        c = c+1
-    elif b < a:
-        print("亲， 小了哦，再试一下啦")
-        c = c+1
+print("卍卍卍卍卍欢迎进行疯狂猜数字游戏卐卐卐卐卐")
 
 
+coin = int(input("请投入游戏代币,2代币一次"))
+
+
+while ( True ):
+    import random
+    a = random.randint( 1,10 )
+    while( True ):
+        c = int(input("如果不想继续，请输入1,继续游戏输入0"))
+        if c == 1:
+            print("您剩余的游戏币为",coin)
+            break
+        if coin < 2:
+            print("您的游戏币不足")
+            print("游戏币剩余",coin)
+            break
+        coin = coin-2
+        b = int(input("猜猜这是几，请输入1到10中的一个数，猜对奖励六游戏币"))
+        if b == a:
+            print("亲， 猜对了呢，真的好厉害哦！！！奖励6游戏币")
+            coin = coin+6
+            break
+        elif b > a:
+            print("亲， 大了呢，再试一试哦")
+        elif b < a:
+            print("亲， 小了哦，再试一下啦")
+
+    if c == 1:
+        break;
+    elif coin < 2:
+        q = int(input("如果继续游戏，请输入1进行继续投币，不想进行输入0"))
+        if q == 1:
+            r = int(input("请继续投入代币"))
+            coin = coin+r
+        elif q == 0:
+            break;
+
+
+
+
+
+print("欢迎下次进行本游戏☺☺☺")
 
 
 
 
 
 
+
+
+'''
 
 
 
@@ -64,12 +90,6 @@ def funread():
 
 
 
-
-
-
-
-
-
 def funsum():
     file = open("C:/Users/apple/Desktop/zhangben.txt", "r+")
     list = file.readlines()
@@ -81,13 +101,6 @@ def funsum():
         a = a+int(list1[3])
     print(a)
     file.close()
-
-
-
-
-
-
-
 
 
 
@@ -108,6 +121,17 @@ while ( True ):
 
 
 
+
+
+
+
+
+
+
+
+
+
+'''
 
 
 
