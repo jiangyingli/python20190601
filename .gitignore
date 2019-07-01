@@ -9,7 +9,8 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-
+.idea/python20190601.iml
+.idea/misc.xml
 # Generated files
 .idea/**/contentModel.xml
 
