@@ -7,8 +7,10 @@ while(coin>1):
         b=0
         coin-=2
         a = random.randint(1, 10)
-        while(b<=2):
+        while(b<=1):
             c=int(input("你猜是几"))
+            #c = random.randint(1, 10)
+            #print(str(c),end="")
             if(c>a):
                 print("大了")
                 b+=1
