@@ -30,10 +30,10 @@ def sum():
         sum=sum+int(list[3])
     print(sum)
     file.close()
-cmd=input("请输入指令 1.记账 2.查看 3.总额")
-if(cmd==1):
+cmd=input("请输入指令 1.记账 2.查看 3.总额\n")
+if(cmd=="1"):
     record()
-elif(cmd==2):
+elif(cmd=="2"):
     show()
-elif(cmd==3):
+elif(cmd=="3"):
     sum()
