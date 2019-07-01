@@ -36,6 +36,7 @@ def sum():
     book = open('D:\记账本.txt', 'a+')
     book.seek(0, 0)
     rows = book.readlines()
+    print(len(rows))
     sum=0
     for i in range(len(rows)):
         list=rows[i].split()
