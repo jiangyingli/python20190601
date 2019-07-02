@@ -1,7 +1,6 @@
 import time
 def record():
     result=time.strftime("%Y-%m-%d %H:%M",time.localtime())
-    print(result)
     g=input("输入商品名称\n")
     p=input("输入商品价格\n")
     file = open("C:/Users/apple/Desktop/账本.txt", "a")
