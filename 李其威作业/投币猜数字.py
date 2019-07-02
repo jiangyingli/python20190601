@@ -5,7 +5,6 @@ def fun():
     for i in range(100):
         global coin
         a = int(input("你猜是几\n"))
-
         if (a>rand):
             print("大了")
             coin=coin-2

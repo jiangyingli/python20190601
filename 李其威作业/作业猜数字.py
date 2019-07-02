@@ -3,11 +3,8 @@ rand =random.randint(1,10)
 i=0
 while(i<3):
     i = i + 1
+    a = int(input("你猜是几\n"))
     if(i<3):
-        a = int(input("你猜是几\n"))
-
-
-
         if (a>rand):
             print("大了")
             continue
