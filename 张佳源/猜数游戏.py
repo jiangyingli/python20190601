@@ -6,9 +6,11 @@ while(coin>1):
     if(cmd=="1"):
         b=0
         coin-=2
-        while(b<=2):
-            a = random.randint(1, 10)
+        a = random.randint(1, 10)
+        while(b<=1):
             c=int(input("你猜是几"))
+            #c = random.randint(1, 10)
+            #print(str(c),end="")
             if(c>a):
                 print("大了")
                 b+=1
@@ -28,5 +30,6 @@ while(coin>1):
         break
 while (coin <= 1):
     print("游戏币不足，游戏结束。")
+    print("您剩余" + str(coin) + "个币")
     break
 
