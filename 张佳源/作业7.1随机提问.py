@@ -55,7 +55,7 @@ while(trial>0):     #这里做成了循环，是因为可能最后没有两个�
     if(a>=2):
         b=random.randint(0, a-1)
         c=random.randint(0, a-1)
-        if(b==c):
+        while(b==c):
             c=random.randint(0,a-1)
         print("本次被提问的同学为"+"   "+list[b]+"   "+list[c])
         print("开始你们的表演")
