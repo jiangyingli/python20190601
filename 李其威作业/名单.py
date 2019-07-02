@@ -5,14 +5,16 @@ a=input("不想选的姓氏1.\n")
 b=input("不想选的姓氏2.\n")
 list1=[]
 list2=[]
+li.seek(0,0)
 line=li.readline()
+
 while(line!=""):
     c=line[0]
     d=line[:len(line)-1]
     if(c!=a ):
         if(c!=b):
             list2.append(c)
-            list1.append(d)     #有错误，list1 ,list2元素加不进去，不会改
+            list1.append(d)
     line = li.readline()
 e=list2.count("a")
 f=list2.count("b")
@@ -32,6 +34,7 @@ a2=input("不想选的姓氏1.\n")
 b2=input("不想选的姓氏2.\n")
 list1=[]
 list2=[]
+li.seek(0,0)
 line=li.readline()
 while(line!=""):
     c=line[0]
@@ -58,6 +61,7 @@ a3=input("不想选的姓氏1.\n")
 b3=input("不想选的姓氏2.\n")
 list1=[]
 list2=[]
+li.seek(0,0)
 line=li.readline()
 while(line!=""):
     c=line[0]
