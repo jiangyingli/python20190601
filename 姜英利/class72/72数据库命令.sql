@@ -12,24 +12,24 @@ CREATE TABLE student (
 	birthday DATE,
 	address VARCHAR(500),
 	height INT
-)
+);
 
-DROP TABLE student
+DROP TABLE student;
 
 INSERT INTO student(number,NAME,sex,birthday,address,height)
-VALUES ('1001','张三','男','2010-01-01','吉林长春','179')
+VALUES ('1001','张三','男','2010-01-01','吉林长春','179');
 
 #正确性，学号不允许重复
 #PRIMARY KEY：主键，主关键字
 
 #更新表数据
-UPDATE student SET NAME='张四' WHERE number='1001'
+UPDATE student SET NAME='张四' WHERE number='1001';
 
 #删除数据
-DELETE FROM student WHERE number='1001'
+DELETE FROM student WHERE number='1001';
 
 #查询数据
-SELECT * FROM student WHERE number='1001'
+SELECT * FROM student WHERE number='1001';
 
 
 CREATE TABLE animals (
@@ -38,7 +38,7 @@ CREATE TABLE animals (
 	kind VARCHAR(8),
 	number INT ,
 	address VARCHAR(32)
-)
+);
 
 INSERT INTO animals VALUES(1801,'美洲豹','猫科',16663,'墨西哥');
 INSERT INTO animals VALUES(1802,'非洲象','象科',357281,'津巴布韦');
@@ -55,26 +55,26 @@ INSERT INTO animals VALUES(1811,'东北虎','猫科',21,'中国');
 
 
 #复杂的查询
-SELECT * FROM animals ORDER BY number
+SELECT * FROM animals ORDER BY number;
 
 
-SELECT * FROM animals ORDER BY number DESC 
+SELECT * FROM animals ORDER BY number DESC ;
 
 
 #group by 分组查询
 #以谁分组，谁能显示
-SELECT kind,COUNT(*) FROM animals GROUP BY kind 
+SELECT kind,COUNT(*) FROM animals GROUP BY kind ;
 
 #指定列
-SELECT * FROM animals
-SELECT NAME,number FROM animals
+SELECT * FROM animals;
+SELECT NAME,number FROM animals;
 
 #多条件
-SELECT * FROM animals WHERE kind='猫科' AND number>10000
-SELECT * FROM animals WHERE kind='猫科' OR number>10000
+SELECT * FROM animals WHERE kind='猫科' AND number>10000;
+SELECT * FROM animals WHERE kind='猫科' OR number>10000;
 
 #查询一部分
-SELECT * FROM animals LIMIT 3,3
+SELECT * FROM animals LIMIT 3,3;
 
 #常用函数
 SELECT MIN(number) FROM animals;
@@ -82,6 +82,6 @@ SELECT MAX(number) FROM animals;
 SELECT AVG(number) FROM animals;
 
 #模糊查询,%匹配任意多字符（0-∞），_ 匹配一个字符
-SELECT * FROM animals WHERE NAME LIKE '美%'
-SELECT * FROM animals WHERE NAME LIKE '美_'
+SELECT * FROM animals WHERE NAME LIKE '美%';
+SELECT * FROM animals WHERE NAME LIKE '美_';
 
