@@ -5,16 +5,15 @@ CREATE TABLE employee (
 	age INT,
 	address VARCHAR(10)
 )
-INSERT INTO employee (id,NAME,sex,age,address)
-VALUES ('1','张三','女','19','北京')
-VALUES ('2','李四','男','20','上海')
-VALUES ('3','王五','女','25','广州')
-VALUES ('4','薛六','女','20','北京')
-VALUES ('5','王五','男','22','北京')
-VALUES ('6','赵七','男','28','上海')
-VALUES ('7','张四','女','23','北京')
 
-#为什么建不成表呢
+INSERT INTO employee VALUES (1,'张三','女',19,'北京');
+INSERT INTO employee VALUES (2,'李四','男',20,'上海');
+INSERT INTO employee VALUES (3,'王五','女',25,'广州');
+INSERT INTO employee VALUES (4,'薛六','女',20,'北京');
+INSERT INTO employee VALUES (5,'王五','男',22,'北京');
+INSERT INTO employee VALUES (6,'赵七','男',28,'上海');
+INSERT INTO employee VALUES (7,'张四','女',23,'北京');
+
 
 
 
@@ -28,7 +27,7 @@ SELECT COUNT(*) FROM employee GROUP BY sex='女'
 # （4）. 写出sql语句，按照年龄倒序获取员工信息（3分）
 SELECT * FROM employee ORDER BY age DESC
 # （5）. 写出sql语句，获取员工中哪个姓名具有重名现象（3分）
-SELECT COUNT(*) FROM employee GROUP BY NAME 
+SELECT COUNT(*) FROM employee GROUP BY NAME HAVING COUNT(*)>1
 # （6）. 写出sql语句，查询所有姓张的员工（3分）
 SELECT * FROM employee WHERE NAME LIKE '张%'
 # （7）. 写出sql语句，查询住址为北京的前3条记录（3分）
