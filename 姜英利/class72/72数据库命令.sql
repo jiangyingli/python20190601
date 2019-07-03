@@ -17,7 +17,7 @@ CREATE TABLE student (
 DROP TABLE student;
 
 INSERT INTO student(number,NAME,sex,birthday,address,height)
-VALUES ('1001','张三','男','2010-01-01','吉林长春','179')
+VALUES ('1001','张三','男','2010-01-01','吉林长春','179');
 
 #正确性，学号不允许重复
 #PRIMARY KEY：主键，主关键字
