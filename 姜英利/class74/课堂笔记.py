@@ -1,27 +1,44 @@
+# SQL语句操作数据
+
+# Python操作数据库
+
 import mysql.connector
 
-#连接数据库
 mydb = mysql.connector.connect(
-    host="localhost",  # 数据库主机地址
-    user="root",  # 数据库用户名
-    passwd="mysql",  # 数据库密码
-    database="python",
-    port="3308"
+    host="localhost",#设置数据库的IP地址，localhost，127.0.0.1表示本机，
+    user="root",#账号，root是超级管理员
+    passwd="mysql",#密码
+    database="python",#连接的数据库实例
+    port="3308"#端口
 )
-mycursor = mydb.cursor()
-# 执行增删改
-sql = "INSERT INTO student (number,name,sex,birthday,address,height) VALUES (%s,%s,%s,%s,%s,%s)"
-val = ("1004","王五","男","2000-02-02","吉林长春","180")
-mycursor.execute(sql, val)
 
-mydb.commit()
+#查询，输出：每人一行，每个属性中间有空格
+cursor = mydb.cursor()
+cursor.execute("select * from reader")
+rows = cursor.fetchall()
 
-# 执行查询
+for i in range(len(rows)):
+    one = rows[i]
+    for j in range(len(one)):
+        print(one[j],end=" ")
+    print()
 
-mycursor.execute("SELECT * FROM student")
+for one in rows :
+    for prop in one :
+        print(prop,end=" ")
+    print()
 
-myresult = mycursor.fetchall()  # fetchall() 获取所有记录
 
-for x in myresult:
-    print(x)
-
+# #数据库的操作对象
+#增，删，改数据都可用
+# cursor = mydb.cursor()
+# code = "1009"
+# name = "王文英"
+# sex = "女"
+# dep = "财务部"
+# sql = "insert into reader (r_code,r_name,r_sex,r_dep) values (%s,%s,%s,%s)"
+# val = (code, name, sex, dep)
+# cursor.execute(sql, val)
+#
+# mydb.commit()#提交生效，不提交不生效
+#
