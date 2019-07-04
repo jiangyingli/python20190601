@@ -1,4 +1,4 @@
-A=[3,95,1,6,1,7,85,7,456,2]
+A=[1,95,6,7,85,7,456,2]
 for i in range(len(A)):
     min_idx=i
     for j in range (i+1,len(A)):
