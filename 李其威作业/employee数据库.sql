@@ -5,17 +5,9 @@ CREATE TABLE employee (
 	age INT,
 	address VARCHAR(10)
 )
-INSERT INTO employee (id,NAME,sex,age,address)
-VALUES ('1','张三','女','19','北京')
-VALUES ('2','李四','男','20','上海')
-VALUES ('3','王五','女','25','广州')
-VALUES ('4','薛六','女','20','北京')
-VALUES ('5','王五','男','22','北京')
-VALUES ('6','赵七','男','28','上海')
-VALUES ('7','张四','女','23','北京')
 
 #为什么建不成表呢
-#语句没问题
+
 
 
 # （1）. 写出sql语句，查询所有年龄大于20岁的员工（2分）
