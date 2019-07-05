@@ -11,10 +11,11 @@ for j in range(len(list)):
 
 print()
 
-a = 1
+a = int(input("输入需要几行三角"))
 
 trangle = [[1],[1,1]]
-for i in range(5):
+c = a-2
+for i in range(c):
     list = [1]
     for j in range(len(trangle[i+1])-1):
         list.append(trangle[i+1][j]+trangle[i+1][j+1])
