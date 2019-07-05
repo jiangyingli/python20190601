@@ -26,7 +26,7 @@ def yiyou():
     for i in range(len(rows)):
         one = rows[i]
         for j in range(len(one)):
-            print(one[j], end=" ")
+            print(one[j],)
         print()
 def xinzeng():
     a=input("请输入code")
@@ -54,7 +54,7 @@ def teding():
     a=query("select * from book where b_name like %s % ",val)
     for i in range(len(a)):
         for j in range(i):
-            print(a[i][j], end=" ")
+            print(a[i][j])
             print()
 cmd=str(input("请输入指令 1.新增图书 2.查看已有图书 3.查看特定图书\n"))
 if(cmd=="1"):
