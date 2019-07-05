@@ -7,7 +7,7 @@ for i in range(20):
     b=a
     a=b+c
     sum=sum+c
-print(sum)
+    print(sum,end=" ")
 
 #杨辉三角
 n=int(input("请输入要打的行数\n"))
