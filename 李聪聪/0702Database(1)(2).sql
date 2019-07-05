@@ -53,13 +53,13 @@ SELECT sex,COUNT(*) FROM employee GROUP BY sex;
 #4按照年龄倒序获取员工信息
 SELECT * FROM employee ORDER BY age DESC;
 #5获取员工中哪个姓名具有重名现象
-SELECT NAME ,COUNT(*) FROM employee GROUP BY NAME WHERE COUNT>1;
+SELECT NAME ,COUNT(*) FROM employee GROUP BY NAME HAVING COUNT(*)>1; #HAVING分组之后的条件判断
 #6查询所有姓张的员工
 SELECT * FROM employee WHERE NAME LIKE '张%';
 #7查询住址为北京的前3条记录
 SELECT * FROM employee WHERE address='北京' LIMIT 0,3;
 #8查询员工总数
-SELECT COUNT(*) FROM employee;
+SELECT COUNT(*) AS 数量 FROM employee;
 #9向表中插入一条记录
 #10修改员工张四的住址为南京
 UPDATE employee SET address='南京' WHERE NAME='张四';
