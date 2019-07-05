@@ -1,14 +1,14 @@
 CREATE TABLE book (
-	b_code VARCHAR(10),
+	b_code VARCHAR(10) PRIMARY KEY,
 	b_name VARCHAR(100),
 	b_author VARCHAR(50),
 	b_publish VARCHAR(100),
 	b_pubdate DATE,
-	b_price DOUBLE(8,2)
+	b_price DOUBLE(8,2) #FLOAT（小）,DOUBLE浮点型
 );
 
 CREATE TABLE reader (
-	r_code VARCHAR(10),
+	r_code VARCHAR(10) PRIMARY KEY,
 	r_name VARCHAR(100),
 	r_sex CHAR(1),
 	r_dep VARCHAR(100)
@@ -55,17 +55,17 @@ INSERT INTO check_out VALUES('b_001','r_003','2012-4-9',NULL);
 # 1、查询在2008年的所有借书信息；
 SELECT * FROM check_out WHERE borrow_date LIKE '2008%';
 # 2、查询丁涛一共借过几本书；
-SELECT * FROM check_out WHERE r_code='r_001';
+SELECT COUNT(*) FROM check_out,reader WHERE check_out.r_code=reader.r_code AND r_name='丁涛';
 # 3、查询人事部的借书信息；
-SELECT * FROM check_out WHERE r_code='r_001' OR r_code='r_002';
+SELECT * FROM check_out,reader WHERE check_out.r_code=reader.r_code AND r_dep='人事部';
 # 4、查询被借次数最多的图书的名称；
-SELECT b_code,COUNT(*) FROM check_out GROUP BY b_code LIMIT 0;
+SELECT b_name,COUNT(*) FROM book,check_out WHERE book.b_code=check_out.b_code GROUP BY b_name LIMIT 0,1;
 # 5、查询未归还的图书；
-SELECT * FROM check_out WHERE return_date=NULL;
+SELECT * FROM check_out,book WHERE check_out.b_code=book.b_code AND return_date IS NULL;
 # 6、查询人民教育出版社的图书数量；
 SELECT COUNT(*) FROM book WHERE b_publish='人民教育出版社';
 # 7、查询价格最贵的图书；
-SELECT MAX(b_price) FROM book; 
+SELECT * FROM book ORDER BY b_price DESC LIMIT 0,1; 
+SELECT * FROM book WHERE b_price=(SELECT MAX(b_price) FROM book);
 # 8、查询价格最便宜的书被谁借阅过；
-SELECT MIN(b_price) FROM book; 
-SELECT r_code FROM check_out WHERE b_code='b_009';
+SELECT r_name FROM reader,check_out,book WHERE reader.r_code=check_out.r_code AND book.b_code=check_out.b_code AND b_price=(SELECT MIN(b_price) FROM book)
