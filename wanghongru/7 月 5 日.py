@@ -51,6 +51,7 @@ def query(sql,val):
     cursor = mydb.cursor()
 
     cursor.execute(sql,val)
+
     return cursor.fetchall()
 '''
 val = [ "r_010" ]
