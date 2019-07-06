@@ -1,4 +1,4 @@
-from 李其威作业 import 数据库 as a
+from 李其威 import 数据库 as a
 i=0
 b=a.query("select * from book ")
 print(b[i*5:(i+1)*5])
@@ -12,3 +12,12 @@ while (i>=0) :
         break
     b=a.query("select * from book ")
     print(b[i*5:(i+1)*5])
+
+
+#page = 2
+
+#start = (page-1)*10
+
+#sql = "select * from book limit "+str(start)+" , 10"
+
+#print(sql)
