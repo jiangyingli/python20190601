@@ -53,7 +53,8 @@ def fun4():
         label = ["", "b_name", "b_author", "b_publish", "b_pubdate", "b_price"]
         str = input("请输入修改后的内容")
         db = mysqlconn()
-        db.update("update book set " + label[cmd2] + " = " + str + " where b_code=" + cmd1)
+        print("update book set " + label[cmd2] + " = '" + str + "' where b_code=" + cmd1)
+        db.update("update book set " + label[cmd2] + " = '" + str + "' where b_code=" + cmd1)
 
 
 cmd=int(input("请输入指令：1.新增图书 2.查看已有图书 3.查看特定图书（模糊查询）4.修改图书信息"))
