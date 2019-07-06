@@ -37,3 +37,14 @@ elif(caozuoyi=="4"):
     print("修改成功")
     b = a.query("select * from book ")
     print(b)
+
+    #修改，
+    # val = input("请输入修改的图书id")
+    # # 显示
+    # print("1书名    2价格    3出版社    4地址")
+    # label = ["","name","price","publish","address"]
+    # input = input("请输入要修改的编号")
+    # 2
+    # val = input("请输入修改后的值")
+    #
+    # sql =  "update book set "+label[input]+" = "+val+" where book_id=xx""
