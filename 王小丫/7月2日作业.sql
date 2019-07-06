@@ -17,7 +17,7 @@ SELECT * FROM employee WHERE age>20;
 SELECT*FROM employee WHERE age<25 AND sex='女';
 SELECT sex,COUNT(*)FROM employee GROUP BY sex;
 SELECT*FROM employee ORDER BY age DESC;
-SELECT NAME,COUNT(*)FROM employee GROUP BY NAME;
+SELECT NAME,COUNT(*)FROM employee GROUP BY NAME
 SELECT*FROM employee WHERE NAME LIKE'张%';
 SELECT id,NAME,sex(*)FROM employee WHERE address='北京';
 SELECT COUNT(*)FROM employee;
