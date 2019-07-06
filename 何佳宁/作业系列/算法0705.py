@@ -1,13 +1,18 @@
 #斐波那契数列
+list=[]
+for i in range(20):
+    list.append(i)
 a=1
 b=1
-sum=0
-for i in range(20):
+n=0
+while (0<=n<=19):
     c=b
     b=a
     a=b+c
-    sum=sum+c
-    print(sum,end=" ")
+    list[n]=c
+    n=n+1
+print(list)
+
 
 #杨辉三角
 n=int(input("请输入要打的行数\n"))
