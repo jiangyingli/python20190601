@@ -45,15 +45,16 @@ def search():
     print()
 
 def searchsp():
-    n= input("")
-    val="[%n%]"
-    query("select * from book where b_name like %s",val)
+    n = input("想要查询图书名字")
+    val = ['%n%']
+    lines = query("select * from book where b_name like %s",val)
+    print(lines)
 
 def correct():
-    a= input("请输入修改图书名字")
-    b=input ("请输入修改后价格")
-    val = [a]
-    update("UPDATE book SET b_price= b WHERE b_name =%s",val)
+    a= input("请输入修改图书编号")
+    b= input("请输入修改后价格")
+    val = [b,a]
+    update("update book set b_price=%s where b_code =%s",val)
 
 
 while(4>3):
@@ -67,4 +68,37 @@ while(4>3):
     elif(cmd == "4"):
         correct()
     elif(cmd=="5"):
-        break
+
+       break
+input("按N下一页.e退出")
+page= 1
+start = (page-1)*10
+sql = "select *from book limit 0,10"
+
+
+import mysql.connector
+class mysqlconn:
+    cursor= None
+    mydb = None
+    def __init_(self):
+        mydb = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            passwd="mysql",
+            database="jintian",
+            port="3308"
+        )
+        cursor = mydb.cursor()
+
+    def query(self,sql, val):
+        self.cursor.execute(sql, val)
+        return self.cursor.fetchall()
+
+    def update(self,sql, val):
+        self.cursor.execute(sql, val)
+        self.mydb.commit()
+
+    input("按N下一页.e退出")
+    page = 1
+    start = (page - 1) * 10
+    sql = "select *from book limit 0,10"
