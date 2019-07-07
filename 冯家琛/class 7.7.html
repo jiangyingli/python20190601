@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js</title>
+    <script>
+        function chg(size) {
+            a = document.getElementById("a")
+            a.width=size
+            a.style.border="1px solid grey"
+        }
+        function dis() {
+            document.getElementById("a").style.display="none"
+
+        }
+        function back() {
+            document.getElementById("a").style.display="block"
+
+        }
+    </script>
+</head>
+<body>
+<input value="消失" onclick="dis()" type="button"><br/>
+<input value="恢复" onclick="back()" type="button"><br/>
+<img src="lll.jpg" width="300" id="a"
+ onmouseover="chg(500)" onmouseout="chg(300)">
+
+</body>
+</html>
