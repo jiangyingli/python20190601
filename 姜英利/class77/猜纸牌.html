@@ -18,7 +18,16 @@
             // 概率
             imgs = document.getElementsByTagName("img")
             if(num == n){
+                i=1
                 imgs[n-1].src="b.jpg"
+
+                while(i<=3){
+                    if( i!=n ){
+                        imgs[i-1].src="a.jpg"
+                    }
+                    i++
+                }
+
             }else{
                 imgs[n-1].src="a.jpg"
             }
