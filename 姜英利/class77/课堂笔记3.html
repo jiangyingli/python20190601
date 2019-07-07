@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>课堂笔记3</title>
+    <script>
+        function chg(size){
+            a = document.getElementById("a")
+            a.width=size
+            a.style.border = "1px solid gray"
+        }
+        function dis(){
+            document.getElementById("a").style.display="none"
+            // document.getElementById("a").style.display="block"
+        }
+    </script>
+</head>
+<body>
+    <input value="消失" onclick="dis()" type="button"><br/>
+    <img src="a.png" width="200" id="a"
+         onmouseover="chg(250)" onmouseout="chg(200)">
+</body>
+</html>
