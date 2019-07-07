@@ -1,4 +1,4 @@
-from 张佳源 import 数据库函数 as kt
+from 张佳源 import DB as kt
 #code=input("code")
 #name=input("name")
 #sex=input("sex")

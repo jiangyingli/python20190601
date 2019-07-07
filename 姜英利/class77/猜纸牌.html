@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>猜纸牌</title>
+    <script>
+        num=0
+        rand = Math.random()
+        if(rand<0.3333){
+            num=1
+        }else if(rand<0.6666){
+            num=2
+        }else{
+            num=3
+        }
+
+        function f(n){
+            // 概率
+            imgs = document.getElementsByTagName("img")
+            if(num == n){
+                i=1
+                imgs[n-1].src="b.jpg"
+
+                while(i<=3){
+                    if( i!=n ){
+                        imgs[i-1].src="a.jpg"
+                    }
+                    i++
+                }
+
+            }else{
+                imgs[n-1].src="a.jpg"
+            }
+        }
+        function who(){
+            num=1
+        }
+    </script>
+</head>
+<body>
+
+    <img src="c.png" onclick="f(1 )" width="150"/>
+    <img src="c.png" onclick="f(2 )" width="150"/>
+    <img src="c.png" onclick="f(3 )" width="150"/>
+    <div style="width:20px;height:20px" onclick="who()">
+    </div>
+</body>
+</html>
