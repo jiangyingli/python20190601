@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>script</title>
+    <script>
+        size=710
+        function f(){
+            size=size-50
+            document.getElementById("people").width=size
+        }
+        function g(){
+            size=size+50
+            document.getElementById("people").width=size
+        }
+        function s(t){
+            all = document.getElementsByName ("hero");
+            i=0
+            while(true){
+                all[i].checked=t
+                i=i+1
+                if(!all[i]){
+                    break
+                }
+            }
+        }
+        function fx(){
+            all = document.getElementsByName ("hero");
+            i=0
+            while(true){
+                if(all[i].checked)
+                    all[i].checked=false
+                else
+                    all[i].checked=true
+                i=i+1
+                if(!all[i]){
+                    break
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="全选" onclick="s(true)">
+    <input type="button" value="取消" onclick="s(false)">
+    <input type="button" value="反选" onclick="fx()">
+    <input type="checkbox"  name="hero">1
+    <input type="checkbox"  name="hero">2
+    <input type="checkbox"  name="hero">3
+    <input type="checkbox"  name="hero">4
+    <input type="checkbox"  name="hero">5
+    <hr/>
+    <input type="button" value="小" onclick="f()">
+    <input type="button" value="大" onclick="g()">
+    <br/>
+    <img src="图片.png" id="people">
+
+</body>
+</html>
+

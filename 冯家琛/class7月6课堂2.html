@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java</title>
+    <script>
+        alert("弹出框")
+        size = 607
+
+        function f() {
+            size = size - 50
+            document.getElementById("people").width = size
+        }
+
+        function g() {
+            size = size + 50
+            document.getElementById("people").width = size
+        }
+
+        function selAll(t) {
+            all = document.getElementsByName("interest");
+            i = 0
+            while (true) {
+                all[i].checked = t
+                i = i + 1
+                if (!all[i]) {
+                    break
+                }
+            }
+        }
+
+        function selother() {
+            all = document.getElementsByName("interest")
+            i = 0
+            while (true) {
+                if (all[i].checked)
+                    all[i].checked = false
+                else
+                    all[i].checked = true
+
+                i = i + 1
+                if (!all[i]) {
+                    break
+                }
+            }
+        }
+
+    </script>
+
+
+</head>
+<body>
+
+<input type="button" value="小" onclick="f()">
+<input type="button" value="大" onclick="g()">
+<img src="lll.jpg" id="people">
+<input type="button" value="全选" onclick="selAll(true)">
+<input type="button" value="取消" onclick="selAll(false)">
+<input type="button" value="反选" onclick="selother()">
+<input type="checkbox" name="interest">足球
+<input type="checkbox" name="interest">篮球
+<input type="checkbox" name="interest">乒乓球
+</body>
+</html>
