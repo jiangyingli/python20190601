@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+    <script>
+        // 整个页面从上向下执行，需要保证操作的元素已经存在才行
+        //alert("弹出框！")
+        //控制页面元素
+        // 获取img元素，设置宽高
+        // document代表当前页面，
+        // getElementById，根据id获取元素
+        //
+        size = 607
+
+        function f() {
+            size = size - 50;
+            document.getElementById("people").width = size;
+        }
+        function g() {
+            size = size + 50;
+            document.getElementById("people").width = size;
+        }
+        function selAll(t){
+            all = document.getElementsByName("interest");
+            i = 0
+            while( true ){
+                all[i].checked=t
+                i=i+1
+                if( !all[i] ){
+                    break
+                }
+            }
+        }
+        function selother(){
+            all = document.getElementsByName("interest");
+            i = 0
+            while( true ){
+                if(all[i].checked)
+                    all[i].checked=false
+                else
+                    all[i].checked=true
+
+                i=i+1
+                if( !all[i] ){
+                    break
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="全选" onclick="selAll(true)">
+<input type="button" value="取消" onclick="selAll(false)">
+<input type="button" value="反选" onclick="selother()">
+
+<input type="checkbox" id="a1" name="interest">足球
+<input type="checkbox" id="a2" name="interest">篮球
+<input type="checkbox" id="a3" name="interest">乒乓球
+
+<hr/>
+JS：了解即可<br/>
+JAVASCRIPT简写JS<br/>
+JAVA C/C++ Python<br/>
+
+
+<input type="button" value="小" onclick="f()">
+<input type="button" value="大" onclick="g()">
+<br/>
+<img src="a.png" id="people">
+</body>
+</html>
