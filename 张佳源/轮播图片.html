@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图片</title>
+    <script>
+        function put(n){
+            imgs=["1.jpg","2.jpg","3.jpg","4.jpg"]
+            document.getElementById("big").src=imgs[n]
+            small=document.getElementsByTagName("img")
+            i=1
+            while(true){
+                if( !small[i] )
+                    break
+                small[i].style.border="0px"
+                small[i].style.border.width="150px"
+                small[i].style.border.height="150px"
+                i++}
+            small[n+1].style.border="2px solid red"
+            small[n+1].style.border.width="146px"
+            small[n+1].style.border.height="146px"
+
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <img src="1.jpg" id="big" width="600" height="600"/>
+    </div>
+    <div>
+        <img src="1.jpg" width="150" height="150" onmouseover="put(0)"/>
+        <img src="2.jpg" width="150" height="150" onmouseover="put(1)"/>
+        <img src="3.jpg" width="150" height="150" onmouseover="put(2)"/>
+        <img src="4.jpg" width="150" height="150" onmouseover="put(3)"/>
+    </div>
+</body>
+</html>
