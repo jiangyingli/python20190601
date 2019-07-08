@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+    <script>
+        function result(){
+            a=document.getElementById ("a").value
+            b=document.getElementById ("b").value
+            op=document.getElementById ("op").value
+             var d=0
+            if(op=="+"){
+                // d=a/1+b/1
+                d=parseInt(a)+parseInt(b)
+                //d=a-(0-b)
+            }else if(op=="-"){
+                d=a-b
+            }else if(op=="*"){
+                d=a*b
+            }else if(op=="/"){
+                d=a/b
+            }
+            //d=eval(a+op+b)    //运行字符串
+            document.getElementById("c").value=d
+        }
+    </script>
+</head>
+<body>
+    <input id="a">
+    <select id="op">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+    </select>
+    <input id="b">
+    <input type="button" value="=" onclick="result()">
+    <input id="c">
+</body>
+</html>
