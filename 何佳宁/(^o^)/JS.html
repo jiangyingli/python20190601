@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mytitle</title>
+    <script>
+        function chg(size){
+            a=document.getElementById("scenery")
+            a.width=size
+            a.style.border="10px solid gray"
+        }
+        function dis() {
+            document.getElementById("scenery").style.display="none"
+            //document.getElementById("scenery").style.display="block"
+        }
+    </script>
+</head>
+<body>
+    <script>
+        num=0
+        rand=Math.random()
+        if(rand<0.333333333){
+            num=1
+        }else if(rand<0.666666666){
+            num=2
+        }else {
+            num=3
+        }
+        function h(n) {
+            imgs = document.getElementsByTagName("img")
+            if (num == n) {
+                imgs[n-1].src="../../姜英利/class77/b.jpg."
+                if(i!=n-1) {
+                    imgs[i].src ="../../姜英利/class77/a.jpg"
+                }
+            }else{
+                imgs[n-1].src="../../姜英利/class77/a.jpg"
+            }
+        }
+    </script>
+    <img src="../../姜英利/class77/c.png" onclick="h(1)">
+    <img src="../../姜英利/class77/c.png" onclick="h(2)">
+    <img src="../../姜英利/class77/c.png" onclick="h(3)">
+
+
+
+<input type="button" value="全选" onclick="selall()">
+<input type="button" value="取消" onclick="cancel()">
+<input type="button" value="反选" >
+<input type="checkbox" name="interest" >足球
+<input type="checkbox" name="interest" >篮球
+<input type="checkbox" name="interest" >乒乓球<br/>
+</hr>
+
+      JS:了解即可<br/>
+      JAVASCRIPT简写JS<br/>
+      JAVA C/C++ Python<br/>
+      <input type="button" value="小" onclick="f()">
+      <input type="button" value="大" onclick="g()">
+      <br/>
+      <input value="图片消失" onclick="dis()" type="button"><br/>
+      <img src="timg.jpg" id="scenery">
+
+
+
+
+</body>
+</html>
+    <script>
+        alert("欢迎回来！")
+        //控制页面元素
+        //获取img元素，设置宽高
+
+        size=1024
+        function f() {
+            size=size-38
+            document.getElementById("scenery").width=size
+        }
+        function g() {
+            size=size+38
+            document.getElementById("scenery").width=size
+        }
+        function selall() {
+            all=document.getElementsByName("interest")
+            i=0
+            while(true){
+                all[i].checked=true
+                i=i+1
+                if(!all[i]){
+                    break
+                }
+            }
+        }
+
+    </script>
