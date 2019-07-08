@@ -4,27 +4,59 @@
     <meta charset="UTF-8">
     <title>坦克大战</title>
     <style>
+        /*body{*/
+            /*background:url("a.jpg") no-repeat;*/
+            /*background-size:100%;*/
+        /*}*/
         .tank{
             position: absolute;
+        }
+        .wall{
+            position: absolute;
+            top:200px;
+            left:300px;
+            width:200px;
+            height:300px;
+            border:1px solid
         }
     </style>
     <script>
         function gogogo(){
             tank = document.getElementById("tank")
             key = event.keyCode
-            //alert(key)
-            if(key == 87){//上
 
+            if(key == 87){//上
+                tank.src="up.jpg"
+                tank.style.top = (parseInt(tank.style.top) - 10)+"px"
             }else if(key == 68){//右
                 tank.src="right.jpg"
                 tank.style.left = (parseInt(tank.style.left) +10)+"px"
+            }else if(key == 65){//左
+                tank.src="left.jpg"
+                tank.style.left = (parseInt(tank.style.left) -10)+"px"
+            }else if(key == 83){//下
+                tank.src="down.jpg"
+                tank.style.top = (parseInt(tank.style.top) + 10)+"px"
+            }else if(key == 32){
+                //alert(tank.style.left)
+
             }
         }
+        alert( document.documentElement.clientWidth )
+        alert( document.documentElement.clientHeight )
+        function cross(  ){
+             alert( document.body.clientWidth +"  "+document.body.clientHeight )
+        }
+        // cross()
     </script>
 </head>
 <body>
     <input type="button" value="开始游戏" onkeydown="gogogo()">
-    <img id="tank" style="left:100px" src="up.jpg" height="100" class="tank">
+    <img id="tank" style="left:100px;top:0px" src="up.jpg" height="100" class="tank">
 
+    <div class="wall">
+
+    </div>
+    <img>
 </body>
 </html>
