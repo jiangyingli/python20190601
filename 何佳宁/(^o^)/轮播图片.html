@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随意</title>
+    <script>
+        function chg(n){
+            imgs=["晚霞.jpg","秋江.jpg","timg.jpg","绿水.jpg"]
+            pic=document.getElementsByTagName("img")
+            i=0
+            while(true){
+                if(!pic[i]){
+                    break
+                }
+                pic[i].style.border="0px"
+                i=i+1
+            }
+            pic[n+1].style.border="2px solid black"
+            document.getElementById("h").src= imgs[n]
+        }
+    </script>
+</head>
+<body>
+      <div>
+          <img src="晚霞.jpg" width="511" height="380" id="h">
+      </div>
+      <div>
+          <img src="晚霞.jpg" width="125"height="88" onmouseover="chg(0)">
+          <img src="秋江.jpg" width="125"height="88" onmouseover="chg(1)">
+          <img src="timg.jpg" width="125"height="88" onmouseover="chg(2)">
+          <img src="绿水.jpg" width="125"height="88" onmouseover="chg(3)">
+      </div>
+
+</body>
+</html>
