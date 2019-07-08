@@ -7,44 +7,81 @@
         .tank{
             position: absolute;
         }
+        .wall{
+            position: absolute;
+            top:200px;
+            left:300px;
+            width:200px;
+            height:300px;
+            border:1px solid;
+            background-color: brown;
+        }
     </style>
     <script>
+        a=document.documentElement.clientWidth
+        b=document.documentElement.clientHeight
         tag=0
         function gogogo(){
             tank = document.getElementById("tank")
             key = event.keyCode
-            if(key == 87) {
-                if (key == tag){
-                    tank.style.top = (parseInt(tank.style.top) - 10) + "px"
+            if(parseInt(tank.style.left)+100<=300|parseInt(tank.style.left)>=500){
+                if(key == 87) {
+                    if((parseInt(tank.style.top) - 10)>=0){
+                        if (key == tag){
+                        tank.style.top = (parseInt(tank.style.top) - 10) + "px"
+                        }
+                        else{
+                        tank.src="up.jpg"
+                        }
+                    }
+                    else{
+                        tank.style.top="0px"
+                    }
+
                 }
-                else{
-                    tank.src="up.jpg"
+
+
+                else if(key == 83){
+                    if((parseInt(tank.style.top)+100 +10)<=b){
+                        if(key==tag){
+                            tank.style.top = (parseInt(tank.style.top) +10)+"px"
+                        }
+                        else{
+                            tank.src="down.jpg"
+                        }
+                    }
+                    else{
+                        tank.style.top=b-100
+                    }
                 }
             }
             else if(key == 68){
-                if(key==tag){
-                    tank.style.left = (parseInt(tank.style.left) +10)+"px"
+                if((parseInt(tank.style.left)+100 +10)<=a){
+                     if(key==tag){
+                        tank.style.left = (parseInt(tank.style.left) +10)+"px"
+                    }
+                    else{
+                        tank.src="right.jpg"
+                    }
                 }
                 else{
-                    tank.src="right.jpg"
+                    tank.style.left=a-100
                 }
             }
             else if(key == 65){
-                if(key==tag){
-                    tank.style.left = (parseInt(tank.style.left) -10)+"px"
+                if((parseInt(tank.style.left) -10)>=0){
+                    if(key==tag){
+                        tank.style.left = (parseInt(tank.style.left) -10)+"px"
+                    }
+                    else{
+                        tank.src="left.jpg"
+                    }
                 }
                 else{
-                    tank.src="left.jpg"
+                    tank.style.left=0
                 }
             }
-            else if(key == 83){
-                if(key==tag){
-                    tank.style.top = (parseInt(tank.style.top) +10)+"px"
-                }
-                else{
-                    tank.src="down.jpg"
-                }
-            }
+
             tag=key
         }
     </script>
@@ -52,6 +89,8 @@
 <body>
     <input type="button" value="开始游戏" onkeydown="gogogo()">
     <img id="tank" style="left:100px;top:0px" src="up.jpg" height="100" class="tank">
+    <div class="wall">
+    </div>
 
 </body>
 </html>
