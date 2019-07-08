@@ -24,65 +24,87 @@
         function gogogo(){
             tank = document.getElementById("tank")
             key = event.keyCode
-            if(parseInt(tank.style.left)+100<=300|parseInt(tank.style.left)>=500){
-                if(key == 87) {
-                    if((parseInt(tank.style.top) - 10)>=0){
-                        if (key == tag){
-                        tank.style.top = (parseInt(tank.style.top) - 10) + "px"
-                        }
-                        else{
-                        tank.src="up.jpg"
-                        }
+            if(parseInt(tank.style.left)<=500&parseInt(tank.style.top)<=500&parseInt(tank.style.left)>=200&parseInt(tank.style.top)>=100) {
+                if (key == 87) {
+
+                    if (key == tag) {
+                        tank.style.top = tank.style.top
+                    } else {
+                        tank.src = "up.jpg"
                     }
-                    else{
-                        tank.style.top="0px"
+
+                } else if (key == 83) {
+
+                    if (key == tag) {
+                        tank.style.top = tank.style.top
+                    } else {
+                        tank.src = "down.jpg"
+                    }
+
+                } else if (key == 68) {
+
+                    if (key == tag) {
+                        tank.style.left = tank.style.left
+                    } else {
+                        tank.src = "right.jpg"
+                    }
+
+                } else if (key == 65) {
+
+                    if (key == tag) {
+                        tank.style.left = tank.style.left
+                    } else {
+                        tank.src = "left.jpg"
                     }
 
                 }
-
-
-                else if(key == 83){
-                    if((parseInt(tank.style.top)+100 +10)<=b){
-                        if(key==tag){
-                            tank.style.top = (parseInt(tank.style.top) +10)+"px"
-                        }
-                        else{
-                            tank.src="down.jpg"
-                        }
-                    }
-                    else{
-                        tank.style.top=b-100
-                    }
-                }
+                tag = key
             }
-            else if(key == 68){
-                if((parseInt(tank.style.left)+100 +10)<=a){
-                     if(key==tag){
-                        tank.style.left = (parseInt(tank.style.left) +10)+"px"
+            else {
+                if (key == 87) {
+                    if ((parseInt(tank.style.top) - 10) >= 0) {
+                        if (key == tag) {
+                            tank.style.top = (parseInt(tank.style.top) - 10) + "px"
+                        } else {
+                            tank.src = "up.jpg"
+                        }
+                    } else {
+                        tank.style.top = "0px"
                     }
-                    else{
-                        tank.src="right.jpg"
+                } else if (key == 83) {
+                    if ((parseInt(tank.style.top) + 100 + 10) <= b) {
+                        if (key == tag) {
+                            tank.style.top = (parseInt(tank.style.top) + 10) + "px"
+                        } else {
+                            tank.src = "down.jpg"
+                        }
+                    } else {
+                        tank.style.top = b - 100
+                    }
+                } else if (key == 68) {
+                    if ((parseInt(tank.style.left) + 100 + 10) <= a) {
+                        if (key == tag) {
+                            tank.style.left = (parseInt(tank.style.left) + 10) + "px"
+                        } else {
+                            tank.src = "right.jpg"
+                        }
+                    } else {
+                        tank.style.left = a - 100
+                    }
+                } else if (key == 65) {
+                    if ((parseInt(tank.style.left) - 10) >= 0) {
+                        if (key == tag) {
+                            tank.style.left = (parseInt(tank.style.left) - 10) + "px"
+                        } else {
+                            tank.src = "left.jpg"
+                        }
+                    } else {
+                        tank.style.left = 0
                     }
                 }
-                else{
-                    tank.style.left=a-100
-                }
-            }
-            else if(key == 65){
-                if((parseInt(tank.style.left) -10)>=0){
-                    if(key==tag){
-                        tank.style.left = (parseInt(tank.style.left) -10)+"px"
-                    }
-                    else{
-                        tank.src="left.jpg"
-                    }
-                }
-                else{
-                    tank.style.left=0
-                }
+                tag = key
             }
 
-            tag=key
         }
     </script>
 </head>
