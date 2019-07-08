@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+    <script>
+        function result() {
+            a=document.getElementById("a").value
+            b=document.getElementById("b").value
+            op=document.getElementById("op").value
+            r =eval(a+op+b)
+            document.getElementById("c").value=r
+
+        }
+    </script>
+</head>
+<body>
+    <input id="a" />
+    <select id="op">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+    </select>
+    <input id="b"/>
+    <input type="button" value="=" onclick="result()" />
+    <input id="c">
+
+
+
+</body>
+</html>

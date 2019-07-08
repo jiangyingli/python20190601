@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图片</title>
+    <script>
+        function chg(n) {
+            imgs = ["q.jpg","w.jpg","e.jpg","r.jpg","t.jpg","y.jpg","u.jpg","i.jpg","o.jpg"]
+            document.getElementById("big").src=imgs[n]
+            document.getElementById(n).border="3px green"
+        }
+        function chg2(n) {
+            document.getElementById(n).border="0"
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <img src="q.jpg" width="400" height="500" id="big" >
+    </div>
+    <div style="height:104px" >
+        <img src="q.jpg" width="100" height="100" onmouseover="chg(0)" border="0" id="0" onmouseout="chg2(0)">
+        <img src="w.jpg" width="100" height="100" onmouseover="chg(1)" border="0" id="1" onmouseout="chg2(1)">
+        <img src="e.jpg" width="100" height="100" onmouseover="chg(2)"border="0" id="2" onmouseout="chg2(2)">
+        <img src="r.jpg" width="100" height="100" onmouseover="chg(3)"border="0" id="3" onmouseout="chg2(3)">
+        <img src="t.jpg" width="100" height="100" onmouseover="chg(4)"border="0" id="4" onmouseout="chg2(4)">
+        <img src="y.jpg" width="100" height="100" onmouseover="chg(5)"border="0" id="5" onmouseout="chg2(5)">
+        <img src="u.jpg" width="100" height="100" onmouseover="chg(6)"border="0" id="6" onmouseout="chg2(6)">
+        <img src="i.jpg" width="100" height="100" onmouseover="chg(7)"border="0" id="7" onmouseout="chg2(7)">
+        <img src="o.jpg" width="100" height="100" onmouseover="chg(8)"border="0" id="8" onmouseout="chg2(8)">
+    </div>
+
+</body>
+</html>
