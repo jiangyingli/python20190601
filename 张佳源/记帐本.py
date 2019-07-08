@@ -45,6 +45,7 @@ def sum():
     book.close()
 
 
+
 a=0
 while(a<=9999):
     cmd=input("请输入指令1.记账 2.查看 3.总和 4.关闭")

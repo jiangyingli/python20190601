@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mouse</title>
+    <script>
+        function g(t){
+            document.getElementById("a").width=t
+        }
+        function dis(){
+            document.getElementById("a").style.display="none"
+        }
+        function shw(){
+            document.getElementById("a").style.display="block"
+        }
+    </script>
+</head>
+<body>
+    <input value="消失" onclick="dis()" type="button"><br/>
+    <input value="出现" onclick="shw()" type="button"><br/>
+    <bh/>
+    <img src="图片.png" id="a" onmouseover="g(1000)" onmouseout="g(500)">
+</body>
+</html>
