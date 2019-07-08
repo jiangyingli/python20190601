@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图片</title>
+    <script>
+        function chg(n){
+            //alert(n)
+            imgs = ["a.jpg","b.jpg","c.jpg","d.jpg"]
+            document.getElementById("big").src=imgs[n]
+            // 所有图片边框取消
+            small = document.getElementsByTagName("img")
+            i=1
+            while(true){
+                if(!small[i])
+                    break
+                small[i].style.border="0px"
+                small[i].style.width="100px"
+                small[i].style.height="100px"
+                i++
+            }
+            small[n+1].style.border="2px solid red"
+            small[n+1].style.width="96px"
+            small[n+1].style.height="96px"
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <img src="a.jpg" width="400" height="300" id="big" />
+    </div>
+    <div>
+        <img src="a.jpg" width="100" height="100" onmouseover="chg(0)"/>
+        <img src="b.jpg" width="100" height="100" onmouseover="chg(1)"/>
+        <img src="c.jpg" width="100" height="100" onmouseover="chg(2)"/>
+        <img src="d.jpg" width="100" height="100" onmouseover="chg(3)"/>
+    </div>
+</body>
+</html>
