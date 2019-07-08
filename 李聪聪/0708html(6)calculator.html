@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function result() {
+            a = document.getElementById("a").value
+            b = document.getElementById("b").value
+            op = document.getElementById("op").value
+            //d=eval(a+op+b)
+            var d=0
+            if (op == "+") {
+                //d = (a-0) + (b-0)
+                d=parseInt(a)+parseInt(b)
+            }
+            else if (op == "-") {
+                d = a - b
+            }
+            else if (op == "*") {
+                d = a * b
+            }
+            else if (op == "/") {
+                d = a / b
+            }
+            document.getElementById("c").value = d
+        }
+    </script>
+</head>
+<body>
+    <input id="a"/>
+    <select id="op">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+    </select>
+    <input id="b"/>
+    <input type="button" value="=" onclick="result()"/>
+    <input id="c"/>
+</body>
+</html>
