@@ -1,7 +1,7 @@
 class mysqlconn:
     cursor = None
     mydb = None
-    def _inti_(self):
+    def __init__(self):
         mydb = mysql.connector.connect(
             host="localhost",
             user="root",
@@ -19,3 +19,9 @@ class mysqlconn:
     def update(self,sql,val=[]):
         self.cursor.execute(sql, val)
         self.mydb.commit()
+
+
+
+
+
+

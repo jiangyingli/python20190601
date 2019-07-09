@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>坦克大战</title>
+    <style>
+        .tank {
+            position: absolute;
+        }
+
+        .wall {
+            position: absolute;
+        }
+    </style>
+    <script>
+        function gogogo() {
+            tank = document.getElementById("tank")
+            key = event.keyCode
+
+
+            if (key == 65) {
+                tank.src = "left.jpg"
+                if (parseInt(tank.style.left) > 0) {
+                    if (parseInt(tank.style.left) == 400 && parseInt(tank.style.top) > 100 && parseInt(tank.style.top) < 400) {
+                        alert("撞墙了")
+                    } else {
+                        if (tank.src.indexOf("left.jpg") != -1) {
+                            tank.style.left = (parseInt(tank.style.left) - 10) + "px"
+                        }
+                    }
+                }
+            }
+            if (key == 68) {
+                if (parseInt(tank.style.left) < 1396) {
+                    if (parseInt(tank.style.left) == 100 && parseInt(tank.style.top) > 100 && parseInt(tank.style.top) < 400) {
+                    } else {
+                        if (tank.src.indexOf("right.jpg") != -1) {
+                            tank.style.left = (parseInt(tank.style.left) + 10) + "px"
+                        }
+                    }
+                } else {
+                    tank.src = "right.jpg"
+                }
+                tank.src = "right.jpg"
+            }
+            if (key == 87) {
+                if (parseInt(tank.style.top) > 0) {
+                    if (parseInt(tank.style.top) == 400 && parseInt(tank.style.left) > 100 && parseInt(tank.style.left) < 400) {
+                    } else {
+                        if (tank.src.indexOf("up.jpg") != -1) {
+                            tank.style.top = (parseInt(tank.style.top) - 10) + "px"
+                        }
+                    }
+                } else {
+                    tank.src = "up.jpg"
+                }
+                tank.src = "up.jpg"
+            }
+            if (key == 83) {
+                if (parseInt(tank.style.top) < 721) {
+                    if (parseInt(tank.style.top) == 100 && parseInt(tank.style.left) > 100 && parseInt(tank.style.left) < 400) {
+                    } else {
+                        if (tank.src.indexOf("down.jpg") != -1) {
+                            tank.style.top = (parseInt(tank.style.top) + 10) + "px"
+                        }
+                    }
+                } else {
+                    tank.src = "down.jpg"
+                }
+                tank.src = "down.jpg"
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="开始游戏" onkeydown="gogogo()">
+<img id="tank" style="left:50px; top:0px" src="up.jpg" height="100" width="100" class="tank">
+<img src="a.jpg" width="200" height="200" style="left:200px; top:200px" class="wall">
+</body>
+</html>

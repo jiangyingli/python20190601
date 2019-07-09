@@ -3,11 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>翻纸牌</title>
-<script>
-    rand=
-</script>
+    <script>
+        num = 0
+        rand=Math.random()
+        if(rand<0.3333){
+            num = 1
+        }else if(rand<0.6666){
+            num = 2
+        }else {
+            num = 3
+        }
+        function  f(n){
+            list = document.getElementsByTagName("img")
+            if (n ==num){
+                list[n-1].src="b.jpg"
+                }
+            else{
+                list[n-1].src="a.jpg"
+            }
+            i = 0
+            while(true){if (i!=num){
+                    list[i].src="a.jpg"
+                }
+                i=i+1
+                if (i==3){
+                    break;
+                }}
+        }
+    </script>
 </head>
 <body>
+        <img src="c.png" onclick="f(1 )" width="150"/>
+        <img src="c.png" onclick="f(2 )" width="150"/>
+        <img src="c.png" onclick="f(3 )" width="150"/>
 
 </body>
 </html>

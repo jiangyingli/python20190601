@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function g(){
+            handle123 = setInterval(function(){
+                b = document.getElementById("b")
+                left = parseInt(b.style.left)
+                top = parseInt(b.style.top)
+                b.style.left = left + 10 +"px"
+                if( parseInt( b.style.left) > document.documentElement.clientWidth ){
+                    clearInterval(handle123)
+                    b.style.display = "none"
+                }
+            },10)
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="走" onclick="g()">
+<img src="boom.png" id="b" style="position: absolute;left:100px;top:100px"/>
+</body>
+</html>
