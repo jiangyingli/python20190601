@@ -75,16 +75,20 @@ while( True ):
         a = input("欲修改的图书编号")
         b = int(input("欲修改的项目 1,name 2,author 3,publish 4,date 5,price  "))
         c = input("更正后的信息")
+        val = [c,a]
         if b==1:
-            update("update book set b_name=\"c\" where b_code=\"a\"")
+
+            update("update book set b_name=%s where b_code=%s",val)
         elif b==2:
-            update("update book set b_author=\"c\" where b_code=\"a\"")
+            update("update book set b_author=%s where b_code=%s",val)
         elif b==3:
-            update("update book set b_publish=\"c\" where b_code=\"a\"")
+            update("update book set b_publish=%s where b_code=%s",val)
         elif b==4:
-            update("update book set b_date=\"c\" where b_code=\"a\"")
+            update("update book set b_date=%s where b_code=%s",val)
         elif b==5:
-            update("update book set b_price=\"c\" where b_code=\"a\"")
+            update("update book set b_price=%s where b_code=%s",val)
         mydb.commit()
+        print("更改成功")
     elif com==5:
         break;
+
