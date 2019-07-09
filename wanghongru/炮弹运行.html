@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>炮弹</title>
+    <script>
+        function g(){
+            handle = setInterval(
+                function(){
+                    b = document.getElementById("b")
+                    b.style.left=parseInt(b.style.left)+10+"px"
+                    if( parseInt(b.style.left)> document.documentElement.clientWidth){
+                        clearInterval(handle)
+                        b.style.display = "none"
+                    }
+                },100
+            )
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="射" onclick="g()">
+    <img src="bullet.jpg" id="b" width="15" style="position:absolute;left:10px; top:30px"/>
+</body>
+</html>
