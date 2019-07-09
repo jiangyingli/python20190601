@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOOM</title>
+    <script>
+        function f(){
+            key = event.keyCode
+            b=document.getElementById("b")
+            left=parseInt(b.style.left)
+            topp=parseInt(b.style.top)
+            if(key==87){function n(){b.style.top=topp - 10 +"px"}}
+            if(key==83){function n(){b.style.top=topp + 10 +"px"}}
+            if(key==65){function n(){b.style.left=left - 10 +"px"}}
+            if(key==68){function n(){b.style.left=left + 10 +"px"}}
+            handle=setInterval(function(){
+                b=document.getElementById("b")
+                left=parseInt(b.style.left)
+                topp=parseInt(b.style.top)
+                n()
+                if(parseInt(b.style.left)>1500||parseInt(b.style.left)<0||parseInt(b.style.top)>700||parseInt(b.style.top)<0){
+                    clearInterval(handle)
+                    b.style.display="none"
+                }
+            },10)
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="发射" onkeydown="f()">
+    <img src="boom.png" width="10" height="10" id="b" style="position: absolute;left:100px;top:100px"/>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>移动坦克</title>
+    <style>
+
+        .tank{
+            position: absolute;
+            border:1px solid black
+        }
+    </style>
+    <script>
+        function runrun(){
+            tank=document.getElementById("tank")
+            bullet=document.getElementById("bullet")
+            key = event.keyCode
+            if(key==39){
+                tank.src="right.jpg"
+                if(parseInt(tank.style.left)+10>160&&parseInt(tank.style.top)>20&&parseInt(tank.style.top)<200&&parseInt(tank.style.left)<260){
+                    alert("撞墙了")
+                }else{tank.style.left = (parseInt(tank.style.left) +10)+"px"}
+
+            }else if(key==37){
+                tank.src="left.jpg"
+                if(parseInt(tank.style.left)>160&&parseInt(tank.style.top)>20&&parseInt(tank.style.top)<200&&parseInt(tank.style.left)-10<260){
+                    alert("撞墙了")
+                }else{tank.style.left = (parseInt(tank.style.left) -10)+"px"}
+            }else if(key==38){
+                tank.src="up.jpg"
+                if(parseInt(tank.style.left)>160&&parseInt(tank.style.top)>20&&parseInt(tank.style.top)-10<200&&parseInt(tank.style.left)<260){
+                    alert("撞墙了")
+                }else{tank.style.top = (parseInt(tank.style.top) -10)+"px"}
+            }else if(key==40){
+                tank.src="down.jpg"
+                if(parseInt(tank.style.left)>160&&parseInt(tank.style.top)+10>20&&parseInt(tank.style.top)<200&&parseInt(tank.style.left)<260){
+                    alert("撞墙了")
+                }else{tank.style.top = (parseInt(tank.style.top) +10)+"px"}
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="开始游戏" onkeydown="runrun()"/>
+    <img id="tank" src="up.jpg" style="left:100px; top:20px;" height="50" class="tank"/>
+    <div  style="position:absolute;left:220px; top:70px;width:30px;height:130px;border:1px solid red" >
+        墙
+    </div>
+</body>
+</html>

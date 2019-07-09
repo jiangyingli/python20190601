@@ -35,6 +35,22 @@
                         }else{
                             tank.src = "up.jpg"
                         }
+                    }else if(parseInt(tank.style.top)==400){
+                        if(parseInt(tank.style.left)>=500){
+                            if (tank.src.indexOf("up.jpg") != -1) {
+                                tank.style.top = (parseInt(tank.style.top) - 10) + "px"
+                            } else {
+                                tank.src = "up.jpg"
+                            }
+                        }else if(parseInt(tank.style.left)<=300){
+                            if (tank.src.indexOf("up.jpg") != -1) {
+                                tank.style.top = (parseInt(tank.style.top) - 10) + "px"
+                            } else {
+                                tank.src = "up.jpg"
+                            }
+                        }else{
+                            tank.src = "up.jpg"
+                        }
                     }else{
                         if (tank.src.indexOf("up.jpg") != -1) {
                             tank.style.top = (parseInt(tank.style.top) - 10) + "px"
@@ -54,6 +70,22 @@
                                 tank.src = "down.jpg"
                             }
                         }else if(parseInt(tank.style.left)<=0){
+                            if (tank.src.indexOf("down.jpg") != -1) {
+                                tank.style.top = (parseInt(tank.style.top) + 10) + "px"
+                            } else {
+                                tank.src = "down.jpg"
+                            }
+                        }else{
+                            tank.src = "down.jpg"
+                        }
+                    }else if(parseInt(tank.style.top)==200){
+                        if(parseInt(tank.style.left)>=500){
+                            if (tank.src.indexOf("down.jpg") != -1) {
+                                tank.style.top = (parseInt(tank.style.top) + 10) + "px"
+                            } else {
+                                tank.src = "down.jpg"
+                            }
+                        }else if(parseInt(tank.style.left)<=300){
                             if (tank.src.indexOf("down.jpg") != -1) {
                                 tank.style.top = (parseInt(tank.style.top) + 10) + "px"
                             } else {
@@ -89,6 +121,22 @@
                         }else{
                             tank.src = "left.jpg"
                         }
+                    }else if(parseInt(tank.style.left)==500){
+                        if(parseInt(tank.style.top)>=400){
+                            if (tank.src.indexOf("left.jpg") != -1) {
+                                tank.style.left = (parseInt(tank.style.left) - 10) + "px"
+                            } else {
+                                tank.src = "left.jpg"
+                            }
+                        }else if(parseInt(tank.style.top)<=200){
+                            if (tank.src.indexOf("left.jpg") != -1) {
+                                tank.style.left = (parseInt(tank.style.left) - 10) + "px"
+                            } else {
+                                tank.src = "left.jpg"
+                            }
+                        }else{
+                            tank.src = "left.jpg"
+                        }
                     }else{
                         if (tank.src.indexOf("left.jpg") != -1) {
                             tank.style.left = (parseInt(tank.style.left) - 10) + "px"
@@ -116,6 +164,22 @@
                         }else{
                             tank.src = "right.jpg"
                         }
+                    }else if(parseInt(tank.style.left)==300){
+                        if(parseInt(tank.style.top)>=400){
+                            if (tank.src.indexOf("right.jpg") != -1) {
+                                tank.style.left = (parseInt(tank.style.left) + 10) + "px"
+                            } else {
+                                tank.src = "right.jpg"
+                            }
+                        }else if(parseInt(tank.style.top)<=200){
+                            if (tank.src.indexOf("right.jpg") != -1) {
+                                tank.style.left = (parseInt(tank.style.left) + 10) + "px"
+                            } else {
+                                tank.src = "right.jpg"
+                            }
+                        }else{
+                            tank.src = "right.jpg"
+                        }
                     }else{
                         if (tank.src.indexOf("right.jpg") != -1) {
                             tank.style.left = (parseInt(tank.style.left) + 10) + "px"
@@ -134,6 +198,7 @@
 <input type="button" value="start move" onkeydown="letmove()">
 <img id="tank" style="left:100px; top:0px " src="up.jpg" height="100" class="tank">
 <img name="wall" style="left:100px; top:200px " src="墙.jpg" height="300" width="100" class="wall">
+<img name="wall" style="left:400px; top:300px " src="墙.jpg" height="100" width="100" class="wall">
 
 </body>
 </html>

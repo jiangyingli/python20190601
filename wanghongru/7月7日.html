@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7月6日网</title>
+
+    <script>
+        alert("变小")
+        size=1060
+        function f(){
+                size=size/2
+                document.getElementById("people").width=size;
+        }
+        function g(){
+                size=size*2
+                document.getElementById("people").width=size;
+        }
+        function selall(a){
+            all = document.getElementsByName("interest");
+            i=0;
+            while( true ){
+                all[i].checked=a;
+                i=i+1;
+                if(!all[i]){
+                    break
+                }
+            }
+        }
+        function selother(){
+            all = document.getElementsByName("interest");
+            i=0;
+            while( true ){
+                if(all[i].checked)
+                    all[i].checked=false;
+                else
+                    all[i].checked=true;
+                i=i+1;
+                if(!all[i]){
+                    break
+                }
+            }
+        }
+        function chg(size){
+            a = document.getElementById("people")
+            a.width=size
+        }
+        function dis(t){
+            document.getElementById("people").style.display=t
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="全选" onclick="selall(true)">
+    <input type="button" value="反选" onclick="selother()">
+    <input type="button" value="取消" onclick="selall(false)">
+    <input type="checkbox" name="interest">篮球
+    <input type="checkbox" name="interest">足球
+    <input type="checkbox" name="interest">排球
+
+    <input type="button" value="隐藏图片" onclick="dis('none')">
+    <input type="button" value="显示图片" onclick="dis('block')">
+
+
+    <img src="abcd.jpg" id="people"
+        onmouseover="chg(200)" onmouseout="chg(250)">
+    <input type="button"  value="小" onclick="f()">
+    <input type="button"  value="大" onclick="g()">
+
+
+</body>
+</html>
