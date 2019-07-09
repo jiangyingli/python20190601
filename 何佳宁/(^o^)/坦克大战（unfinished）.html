@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>坦克大战</title>
+        <style>
+        .tank{
+            position: absolute;
+        }
+    </style>
+    <script>
+        function gogogo() {
+            tank = document.getElementById("tank")
+            key = event.keyCode
+            j=0
+            if(key == 87) {//上
+                if(j!= 87){
+                    tank.src = "up.jpg"
+                    j=87
+                }else{
+                    tank.style.top = (parseInt(tank.style.top) - 1000) + "px"
+                }
+            }
+            if(key == 68) {//右
+                if(j!= 68){
+                    tank.src = "right.jpg"
+                    j=68
+                }else{
+                    tank.style.left = (parseInt(tank.style.left) + 1000) + "px"
+                }
+            }
+            if(key == 65) {//左
+                if(j != 65) {
+                    tank.src = "left.jpg"
+                    j=65
+                }else{
+                    tank.style.left = (parseInt(tank.style.left) - 1000) + "px"
+                }
+            }
+            if(key == 83) {
+                if(j!= 83) {
+                    tank.src = "down.jpg"
+                    j=83
+                }else{
+                    tank.style.top = (parseInt(tank.style.top) + 1000) + "px"
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="开始游戏" onkeydown="gogogo()">
+    <img id="tank" style="top:0px;left:100px;"src="up.jpg" height="100" class="tank">
+
+
+</body>
+</html>

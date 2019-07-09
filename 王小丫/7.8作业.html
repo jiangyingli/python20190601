@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .tank{
+            position: absolute;
+        }
+        .wall{
+            position:absolute;
+        }
+    </style>
+    <script>
+        function gogogo(){
+            tank=document.getElementById("tank")
+            key= event.keyCode
+            if(key==65){
+                tank.src="left.jpg"
+            }
+            if(key==1) {
+                tank.style.left = (parseInt(tank.style.left) - 10) + "px"
+                while (parseInt(tank.style.left < 0)) {
+                    break
+                }
+                while (parseInt(100 < tank.style.top < 400, 100 < tank.style.left < 400)) {
+                    break
+                }
+            }
+            else if (key==68) {
+                tank.src = "right.jpg"
+                if (key == 2) {
+                    tank.style.left = (parseInt(tank.style.left) + 10) + "px"
+                    while (parseInt(100 < tank.style.top < 400, 100 < tank.style.left < 400)) {
+                        break
+                    }
+                }
+            }
+            else if (key==83) {
+                tank.src = "down.jpg"
+                if (key == 3) {
+                    tank.style.top = (parseInt(tank.style.top) - 10) + "px"
+                    while (parseInt(100 < tank.style.top < 400, 100 < tank.style.left < 400)) {
+                        break
+                    }
+                }
+            }
+             else if (key==87) {
+                tank.src = "up.jpg"
+                if (key == 4) {
+                    tank.style.up = (parseInt(tank.style.up) + 10) + "px"
+                    while (parseInt(tank.style.top < 0)) {
+                    break
+                }
+                    while (parseInt(100 < tank.style.top < 400, 100 < tank.style.left < 400)) {
+                        break
+                    }
+                }
+            }
+        }
+
+//allert(tank.style.left)
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="开始游戏" onkeydown="gogogo()">
+<img id="tank" style="left:100px" src="up.jpg" height="100" width="100"  class="tank">
+<img src="a.jpg" width="200" height="200" style=" left:200px; top:200px" class="wall">
+</body>
+</html>

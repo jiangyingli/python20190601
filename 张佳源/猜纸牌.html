@@ -15,22 +15,28 @@
         }
 
         function f(n){
-            // 概率
-            imgs = document.getElementByTagName("img")
+
+            imgs = document.getElementsByTagName("img")
             if(num == n){
-                i=1
                 imgs[n-1].src="b.jpg"
-
-                while(i<=3){
-                    if( i!=n ){
-                        imgs[i-1].src="a.jpg"
-                    }
-                    i++
-                }
-
             }else{
                 imgs[n-1].src="a.jpg"
             }
+            i=0
+            while(true){
+                if(i+1==num){
+                    imgs[i].src="b.jpg"
+
+                }else{
+                    imgs[i].src="a.jpg"
+                }
+                i=i+1
+                if(!imgs[i]){
+                    break
+
+                }
+            }
+
         }
         function who(){
             num=1
@@ -39,7 +45,7 @@
 </head>
 <body>
 
-    <img src="c.png" onclick="f(1 )" width="150"/>
+    <img src="c.png" onclick="f(1)"  width="150"/>
     <img src="c.png" onclick="f(2 )" width="150"/>
     <img src="c.png" onclick="f(3 )" width="150"/>
     <div style="width:20px;height:20px" onclick="who()">
