@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        b=document.getElementById ("b");
+        l=parseInt (b.style.left);
+        t=parseInt (b.style.top);
+        function f(a) {
+            handle=setInterval (function () {
+                b=document.getElementById ("b");
+                l=parseInt (b.style.left);
+                t=parseInt (b.style.top);
+                if(a==1){
+                    b.style.top=t-10+"px"
+                }
+                else if(a==2){
+                    b.style.top=t+10+"px"
+                }
+                else if(a==3){
+                    b.style.left=l-10+"px"
+                }
+                else if(a==4){
+                    b.style.left=l+10+"px"
+                }
+                if(parseInt (b.style.left)<0|parseInt (b.style.left)>document.documentElement.clientWidth|parseInt (b.style.top)>document.documentElement.clientHeight |parseInt (b.style.left)<0){
+                    clearInterval(handle);
+                    b.style.display ="none"
+                }
+            },10)
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="上走" onclick="f(1)">
+    <input type="button" value="下走" onclick="f(2)">
+    <input type="button" value="左走" onclick="f(3)">
+    <input type="button" value="右走" onclick="f(4)">
+    <img src="boom.png" id="b" width="10" style="position:absolute;left:100px;top:100px "/>
+
+</body>
+</html>

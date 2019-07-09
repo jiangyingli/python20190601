@@ -24,44 +24,10 @@
         function gogogo(){
             tank = document.getElementById("tank")
             key = event.keyCode
-            if(parseInt(tank.style.left)<=500&parseInt(tank.style.top)<=500&parseInt(tank.style.left)>=200&parseInt(tank.style.top)>=100) {
+
+            // else {
                 if (key == 87) {
 
-                    if (key == tag) {
-                        tank.style.top = tank.style.top
-                    } else {
-                        tank.src = "up.jpg"
-                    }
-
-                } else if (key == 83) {
-
-                    if (key == tag) {
-                        tank.style.top = tank.style.top
-                    } else {
-                        tank.src = "down.jpg"
-                    }
-
-                } else if (key == 68) {
-
-                    if (key == tag) {
-                        tank.style.left = tank.style.left
-                    } else {
-                        tank.src = "right.jpg"
-                    }
-
-                } else if (key == 65) {
-
-                    if (key == tag) {
-                        tank.style.left = tank.style.left
-                    } else {
-                        tank.src = "left.jpg"
-                    }
-
-                }
-                tag = key
-            }
-            else {
-                if (key == 87) {
                     if ((parseInt(tank.style.top) - 10) >= 0) {
                         if (key == tag) {
                             tank.style.top = (parseInt(tank.style.top) - 10) + "px"
@@ -83,7 +49,7 @@
                     }
                 } else if (key == 68) {
                     if ((parseInt(tank.style.left) + 100 + 10) <= a) {
-                        if (key == tag) {
+                        if (key == tag && inArea( 10,0 )) {
                             tank.style.left = (parseInt(tank.style.left) + 10) + "px"
                         } else {
                             tank.src = "right.jpg"
@@ -103,9 +69,50 @@
                     }
                 }
                 tag = key
+            // }
             }
 
-        }
+    function inArea(l , t){
+            if(parseInt(tank.style.left)<=500&&parseInt(tank.style.top)<=500&&parseInt(tank.style.left)>=200&&parseInt(tank.style.top)>=100) {
+                // if (key == 87) {
+                //
+                //     if (key == tag) {
+                //         tank.style.top = tank.style.top
+                //     } else {
+                //         tank.src = "up.jpg"
+                //     }
+                //
+                // } else if (key == 83) {
+                //
+                //     if (key == tag) {
+                //         tank.style.top = tank.style.top
+                //     } else {
+                //         tank.src = "down.jpg"
+                //     }
+                //
+                // } else if (key == 68) {
+                //
+                //     if (key == tag) {
+                //         tank.style.left = tank.style.left
+                //     } else {
+                //         tank.src = "right.jpg"
+                //     }
+                //
+                // } else if (key == 65) {
+                //
+                //     if (key == tag) {
+                //         tank.style.left = tank.style.left
+                //     } else {
+                //         tank.src = "left.jpg"
+                //     }
+                //
+                // }
+                return false
+                tag = key
+            }else{
+                return true;
+            }
+    }
     </script>
 </head>
 <body>
@@ -113,6 +120,7 @@
     <img id="tank" style="left:100px;top:0px" src="up.jpg" height="100" class="tank">
     <div class="wall">
     </div>
+    <input type="button" value="走" onclick="f()">
 
 </body>
 </html>
