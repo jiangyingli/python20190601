@@ -69,47 +69,14 @@
                     }
                 }
                 tag = key
-            // }
+
             }
 
     function inArea(l , t){
-            if(parseInt(tank.style.left)<=500&&parseInt(tank.style.top)<=500&&parseInt(tank.style.left)>=200&&parseInt(tank.style.top)>=100) {
-                // if (key == 87) {
-                //
-                //     if (key == tag) {
-                //         tank.style.top = tank.style.top
-                //     } else {
-                //         tank.src = "up.jpg"
-                //     }
-                //
-                // } else if (key == 83) {
-                //
-                //     if (key == tag) {
-                //         tank.style.top = tank.style.top
-                //     } else {
-                //         tank.src = "down.jpg"
-                //     }
-                //
-                // } else if (key == 68) {
-                //
-                //     if (key == tag) {
-                //         tank.style.left = tank.style.left
-                //     } else {
-                //         tank.src = "right.jpg"
-                //     }
-                //
-                // } else if (key == 65) {
-                //
-                //     if (key == tag) {
-                //         tank.style.left = tank.style.left
-                //     } else {
-                //         tank.src = "left.jpg"
-                //     }
-                //
-                // }
+            if(parseInt(tank.style.left)+l<=500&&parseInt(tank.style.top)+t<=500&&parseInt(tank.style.left)+l>=200&&parseInt(tank.style.top)+t>=100) {
                 return false
-                tag = key
-            }else{
+            }
+            else{
                 return true;
             }
     }
