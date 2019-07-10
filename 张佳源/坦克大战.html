@@ -6,6 +6,7 @@
     <style>
         .tank {
             position: absolute;
+            border:1px solid black
         }
 
         .wall {
@@ -16,7 +17,29 @@
         function letmove() {
             tank = document.getElementById("tank")
             key = event.keyCode
-            //alert(key)//w87  s83  a65  d68
+            //alert(key)//w87  s83  a65  d68 空格32
+            if (key == 32) {
+                b=document.getElementById("b")
+                b.style.display="block"
+                left=parseInt(b.style.left)
+                topp=parseInt(b.style.top)
+                b.style.left=parseInt(tank.style.left)+50+"px"
+                b.style.top=parseInt(tank.style.top)+50+"px"
+                if(tank.src.indexOf("up.jpg") != -1){function n(){b.style.top=topp - 10 +"px"}}
+                if(tank.src.indexOf("down.jpg") != -1){function n(){b.style.top=topp + 10 +"px"}}
+                if(tank.src.indexOf("left.jpg") != -1){function n(){b.style.left=left - 10 +"px"}}
+                if(tank.src.indexOf("right.jpg") != -1){function n(){b.style.left=left + 10 +"px"}}
+                handle=setInterval(function(){
+                    b=document.getElementById("b")
+                    left=parseInt(b.style.left)
+                    topp=parseInt(b.style.top)
+                    n()
+                    if(parseInt(b.style.left)>1500||parseInt(b.style.left)<0||parseInt(b.style.top)>700||parseInt(b.style.top)<0) {
+                        clearInterval(handle)
+                        b.style.display = "none"
+                    }
+                },10)
+            }
             if (key == 87) {//上
                 if (parseInt(tank.style.top) > 0) {
                     if(parseInt(tank.style.top)==500){
@@ -196,9 +219,9 @@
 </head>
 <body>
 <input type="button" value="start move" onkeydown="letmove()">
-<img id="tank" style="left:100px; top:0px " src="up.jpg" height="100" class="tank">
-<img name="wall" style="left:100px; top:200px " src="墙.jpg" height="300" width="100" class="wall">
-<img name="wall" style="left:400px; top:300px " src="墙.jpg" height="100" width="100" class="wall">
-
+    <img id="tank" style="left:100px; top:0px " src="up.jpg" height="100" class="tank">
+    <img name="wall" style="left:100px; top:200px " src="墙.jpg" height="300" width="100" class="wall">
+    <img name="wall" style="left:400px; top:300px " src="墙.jpg" height="100" width="100" class="wall">
+    <img src="boom.png" width="10" height="10" id="b" style="position: absolute;left:100px;top:100px;display:none"/>
 </body>
 </html>
