@@ -30,3 +30,15 @@ print(q)
 if(q):
     print("ok")
 
+# 允许2位小数
+q=re.match("[1-9][0-9]*\.[0-9][1-9]","1000.11")
+print(q)
+# 允许汉字英文和数字，数字不能再最前（汉字：^[\u4e00-\u9fa5]{0,}$）
+w=re.match("^([\u4e00-\u9fa5]|[a-z]|[A-Z])([\u4e00-\u9fa5]|[a-z]|[A-Z]|[0-9])*","在rgtfrudgnuegu67834dfwnkwerbg没给你买啥地方JHGHFXSD")
+print(w)
+# 固定电话
+e=re.match("^8[0-9]{7}$","85746140")
+print(e)
+# 身份证号
+r=e=re.match("^[0-9]{17}([0-9]|X)$","22010623456780348X")
+print(r)
