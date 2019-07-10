@@ -1,0 +1,21 @@
+body{
+    background-color: #d7fff5;
+}
+.input_1{
+    width:300px;
+    height:30px;
+    padding-left: 10px
+}
+.input_2{
+    width:800px;
+    float: left;
+    margin-top: 50px
+}
+.input_3{
+    width:100px;
+    float: left
+}
+.input_4{
+    width:398px;
+    float: left;
+}

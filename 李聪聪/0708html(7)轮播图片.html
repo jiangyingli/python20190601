@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function chg(n){
+            imgs=["微信图片_20190708145913.jpg","微信图片_20190708150111.jpg","微信图片_20190708150115.jpg","微信图片_20190708150120.jpg"]
+            document.getElementById("a").src=imgs[n]
+            imgss=document.getElementsByTagName ("img")
+            i=1
+            while(true){
+                if(!imgss[i]) {
+                    break
+                }
+                imgss[i].style.border="0px"
+
+                i++
+            }
+            imgss[n+1].style.border="2px solid red"
+            imgss[n+1].style.width="146px"
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <div>
+        <img src="微信图片_20190708145913.jpg" id="a" width="610"/>
+    </div>
+    <div>
+        <img src="微信图片_20190708145913.jpg" width="150" onmouseover="chg(0)"/>
+        <img src="微信图片_20190708150111.jpg" width="150" onmouseover="chg(1)"/>
+        <img src="微信图片_20190708150115.jpg" width="150" onmouseover="chg(2)"/>
+        <img src="微信图片_20190708150120.jpg" width="150" onmouseover="chg(3)"/>
+    </div>
+
+</body>
+</html>

@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>坦克大战</title>
     <style>
-
         .tank{
             position: absolute;
+        }
+        .block{
+            position:absolute;
         }
     </style>
     <script>
@@ -14,24 +16,63 @@
             tank = document.getElementById("tank")
             key = event.keyCode
             //alert(key)
-            if(key == 87){//上
-
-
-            }
-            else if(key == 68){//右
-                if(tank.src!="right.jpg")
-                tank.src="right.jpg"
-                else(tank.src=="right.jpg")
-                tank.style.left = (parseInt(tank.style.left) +10)+"px"
-            }
-
+            x=parseInt(tank.style.left)
+            y=parseInt(tank.style.top)
+                if (key == 87) {//上
+                    if (tank.src != "up.jpg") {
+                        tank.src = "up.jpg"
+                    }else (tank.src == "up.jpg")
+                    {
+                        if (y-10< 450 && x > 350 && x < 500 && y>350) {
+                            // tank.style.top = (parseInt(tank.style.top) - 0) + "px"
+                        } else {
+                            tank.style.top = (parseInt(tank.style.top) - 10) + "px"
+                        }
+                    }
+                } else if (key == 68) {//右
+                    if (tank.src != "right.jpg") {
+                        tank.src = "right.jpg"
+                    } else (tank.src == "right.jpg")
+                    {
+                        if (x+10 > 350 && y > 350 && y < 450 && x<500) {
+                            // tank.style.left = (parseInt(tank.style.left) + 0) + "px"
+                        }else {
+                            tank.style.left = (parseInt(tank.style.left) + 10) + "px"
+                        }
+                    }
+                } else if (key == 83) {//下
+                    if (tank.src != "down.jpg") {
+                        tank.src = "down.jpg"
+                    }
+                    else (tank.src == "down.jpg")
+                    {
+                        if (y+10 > 350 && x > 350 && x < 500 && y<450 ) {
+                            tank.style.top = (parseInt(tank.style.top) + 0) + "px"
+                        }
+                        else {
+                            tank.style.top = (parseInt(tank.style.top) + 10) + "px"
+                        }
+                    }
+                } else if (key == 65) {//左
+                    if (tank.src != "left.jpg") {
+                        tank.src = "left.jpg"
+                    }
+                    else (tank.src == "left.jpg")
+                    {
+                        if (x-10< 500 && y > 350 && y < 450 && x>350) {
+                            tank.style.left = (parseInt(tank.style.left) - 0) + "px"
+                        }
+                        else {
+                            tank.style.left = (parseInt(tank.style.left) - 10) + "px"
+                        }
+                }   }
 
         }
     </script>
 </head>
 <body>
     <input type="button" value="开始游戏" onkeydown="gogogo()">
-    <img id="tank" style="left:70px" src="up.jpg" height="50"class="tank">
-
+    <img id="tank" style="left:100px; top:200px" src="up.jpg" height="50" class="tank">
+    <img id="block" style="top:400px;left:400px;" src="block.jpg" height="50" width="100" class="block">
 </body>
 </html>

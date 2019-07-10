@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>0707js</title>
+    <script>
+        alert("弹出框！");
+        size=690;
+        function f() {
+            size=size-50;
+            document.getElementById("hhh").width=size;
+        }
+        function g() {
+            size=size+50;
+            document.getElementById("hhh").width=size;
+        }
+        function selAll(t) {
+            all=document.getElementsByName("interest");
+            i=0;
+            while(true){
+                all[i].checked=t;
+                i=i+1;
+                if(!all[i]){
+                    break
+                }
+            }
+        }
+        function selother() {
+            all=document.getElementsByName("interest");
+            i=0;
+            while(true){
+                if(all[i].checked){
+                    all[i].checked=false
+                }
+                else{
+                    all[i].checked=true
+                }
+                i=i+1
+                if(!all[i]){
+                    break
+                }
+            }
+        }
+        function chg(size){
+            a=document.getElementById ("a")
+            a.width=size
+            a.style.border ="1px solid gray"
+        }
+        function dis1(){
+            document.getElementById ("a").style.display ="none"
+        }
+        function dis2(){
+            document.getElementById ("a").style.display ="block"
+        }
+
+    </script>
+
+</head>
+<body>
+    <input type="button" value="全选" onclick="selAll(true)">
+    <input type="button" value="取消" onclick="selAll(false)">
+    <input type="button" value="反选" onclick="selother()">
+    <input type="checkbox" name="interest">足球
+    <input type="checkbox" name="interest">篮球
+    <input type="checkbox" name="interest">乒乓球<br/>
+    JS:JAVASCRIPT  控制页面元素，主要控制页面动态效果<br/>
+    <input type="button" value="小" onclick="f()">
+    <input type="button" value="大" onclick="g()"><br/>
+    <img src="TIM图片20190620195033.jpg" id="hhh"><br/>
+    <input type="button" value="消失" onclick="dis1()">
+    <input type="button" value="出现" onclick="dis2()"><br/>
+    <img src="TIM图片20190620195033.jpg" id="a" width="200" onmouseover="chg(690)" onmouseout="chg(200)">
+
+</body>
+</html>

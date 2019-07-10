@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bullet</title>
+    <script>
+        function shoot() {
+            key=event.keyCode
+            if(key==32) {
+                handle123 = setInterval(function () {
+                    b = document.getElementById("bullet")
+                    left = parseInt(b.style.left)
+                    top = parseInt(b.style.top)
+                    if(tank.src == "right.jpg") {
+                        b.style.left = left + 10 + "px"
+                        if (parseInt(b.style.left) > document.documentElement.clientWidth) {
+                            clearInterval(handle123)
+                            b.style.display = "none"
+                        }
+                    }
+                    else if(tank.src == "left.jpg"){
+                        b.style.left = left - 10 + "px"
+                        if (parseInt(b.style.left) <0) {
+                            clearInterval(handle123)
+                            b.style.display = "none"
+                        }
+                    }
+                    else if(tank.src == "up.jpg"){
+                        b.style.top = top - 10 + "px"
+                        if (parseInt(b.style.top) <0) {
+                            clearInterval(handle123)
+                            b.style.display = "none"
+                        }
+                    }
+                    else if(tank.src == "down.jpg"){
+                        b.style.top = top + 10 + "px"
+                        if (parseInt(b.style.top) >document.documentElement.clientHeight) {
+                            clearInterval(handle123)
+                            b.style.display = "none"
+                        }
+                    }
+
+
+                }, 10)
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="射击" onkeydown="shoot()">
+<img src="bullet2.png" id="bullet" style="position: absolute;left: 100px;top: 100px;" height="10">
+</body>
+</html>
