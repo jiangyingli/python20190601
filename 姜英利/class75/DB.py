@@ -4,14 +4,14 @@ class mysqlconn:
     mydb = None
     def __init__(self):#  构造方法：创建对象自动调用1次，
         print(123)
-        mydb = mysql.connector.connect(
+        self.mydb = mysql.connector.connect(
             host="localhost",
             user="root",
             passwd="mysql",
             database="python",
             port="3308"
         )
-        cursor = mydb.cursor()
+        self.cursor = self.mydb.cursor()
 
     def query(self, sql ,val=[] ):
         self.cursor.execute(sql,val)

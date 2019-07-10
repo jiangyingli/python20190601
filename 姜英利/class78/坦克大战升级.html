@@ -72,42 +72,59 @@
             // 墙变形
 
             result1 = pointInArea(tankX, tankY, wallX, wallY, wallX1, wallY1)//左上
-            // result2 = pointInArea(tankX + 100, tankY, wallX, wallY, wallX1, wallY1)//右上
-            // result3 = pointInArea(tankX, tankY + 100, wallX, wallY, wallX1, wallY1)//左下
-            // result4 = pointInArea(tankX + 100, tankY + 100, wallX, wallY, wallX1, wallY1)//右下
-            
+            result2 = pointInArea(tankX + 100, tankY, wallX, wallY, wallX1, wallY1)//右上
+            result3 = pointInArea(tankX, tankY + 100, wallX, wallY, wallX1, wallY1)//左下
+            result4 = pointInArea(tankX + 100, tankY + 100, wallX, wallY, wallX1, wallY1)//右下
+
             return !(result1 | result2 | result3 | result4)
         }
 
         //判断1个点是否在矩形范围内  && ||
         function pointInArea(x, y, px, py, p1x, p1y) {
-            if (x > px)
-                if (x < p1x)
-                    if (y > py)
-                        if (y < p1y)
-                            return true;
+            if (x > px &&x < p1x &&y > py &&y < p1y){
+                        return true;
+            }
             return false;
         }
 
         function bom() {
             OFFSET = [50, -10, 50, 100, -10, 50, 100, 50]//子弹偏移量，上下左右
-            b = document.getElementById("b");
+
+            b = document.getElementById("b").cloneNode();
+            b.style.display="block"
+            document.body.appendChild(b)
+
             tank = document.getElementById("tank")
+
             b.style.left = parseInt(tank.style.left) + OFFSET[direct * 2] + "px"
             b.style.top = parseInt(tank.style.top) + OFFSET[direct * 2 + 1] + "px"
-            bomGo()
+
+            bomGo(b)
         }
 
         i = 0
 
-        function bomGo() {
-            b = document.getElementById("b");
+        function bomGo(b) {
+            var dir = direct
+
+            b.style.display = "block"
             var sss = setInterval(function () {
-                b.style.left = parseInt(b.style.left) + 10 + "px"
+                if(dir == RIGHT){
+                    b.style.left = parseInt(b.style.left) + 10 + "px"
+                }else if(dir == LEFT){
+                    b.style.left = parseInt(b.style.left) - 10 + "px"
+                }else if(dir == UP){
+                    console.log(11111)
+                    b.style.top = parseInt(b.style.top) - 10 + "px"
+                }else if(dir == DOWN){
+                    b.style.top = parseInt(b.style.top) + 10 + "px"
+                }
                 // console.log(parseInt(b.style.left ) +" "+ document.body.clientWidth )
-                if (parseInt(b.style.left) > document.body.clientWidth) {
+                if (parseInt(b.style.left) > document.body.clientWidth
+                        || parseInt(b.style.left) <0 || parseInt( b.style.top )<0
+                        || parseInt(b.style.top ) > document.body.clientWidth ) {
                     clearInterval(sss)
-                    console.log("结束" + sss)
+                    document.body.removeChild(b)
                 }
             }, 10)
             console.log("12===" + sss)
@@ -118,7 +135,7 @@
 <input type="button" value="开始游戏" onkeydown="gogogo()">
 <img id="tank" style="left:100px;top:0px;border:1px solid red" src="up.jpg" height="100" width="100" class="tank">
 
-<div class="wall">
+<div id="wall" class="wall">
 
 </div>
 <img>
