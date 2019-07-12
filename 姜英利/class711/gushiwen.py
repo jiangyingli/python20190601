@@ -7,7 +7,7 @@ r.encoding = r.apparent_encoding
 
 soup = BeautifulSoup(r.text,'html.parser')
 son_divs = soup.find_all("div",class_="sons")
-
+# 12
 for sdiv in son_divs:
     count_div = sdiv.find("div",class_="cont")
     title = count_div.find_all("p")[0].a.b.string
