@@ -5,7 +5,7 @@ r=requests.get(url)
 r.encoding=r.apparent_encoding
 soup=BeautifulSoup(r.text,'html.parser')
 v=soup.find_all("div",class_="contson").get_text("\n",strip="True")
-n=soup.find_all("a",target="_blank")
+
 
 g=soup.find_all("p",class_="source")
 for i in range(len( v)):

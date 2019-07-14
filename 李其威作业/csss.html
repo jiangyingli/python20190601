@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    @keyframes a {
+        0%{width:100px;border-radius: 50px;transform: rotate(-90deg);color:green}
+        25%{width:150px;border-radius: 70px;transform: rotate(-90deg);color:gray}
+        50%{width:170px;border-radius: 90px;transform: rotate(-90deg);color:rebeccapurple}
+        75%{width:150px;border-radius: 50px;transform: rotate(-90deg);color:magenta}
+    }
+    #box1{ box-shadow: 10px 10px red;width:200px ; height:200px ; background:gold  }
+    #box1{animation :a 1s infinite}
+    #box{ box-shadow: 10px 10px red;width:100px ; height:100px ; background:gold  ;transition:transform 3s 2s,width 2s}
+    #box:hover{transform: rotate(-360deg);width:200px ;background:saddlebrown;border-radius: 50px; box-shadow: 1000px 100px red}
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="box1"></div>
+</body>
+</html>
