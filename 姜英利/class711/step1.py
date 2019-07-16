@@ -50,7 +50,7 @@ html = """
 # 调用BeautifulSoup函数，
 # 参数1，解析的HTML内容，汤的原料
 # 参数2，解析器，做汤的方式
-soup = BeautifulSoup(html,"html.parser")
+soup = BeautifulSoup( html ,"html.parser")
 
 # print( type(soup.span.string) )
 # print( type(soup.b.string) )
